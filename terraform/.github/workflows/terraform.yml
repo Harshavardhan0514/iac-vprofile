@@ -1,0 +1,18 @@
+name: "Vprofile IAC"
+on:
+    push:
+        branches:
+            - main
+            - stage
+        paths:
+            - terraform/**
+    pull_request:
+        branches:
+            - main
+        paths:
+            - terraform/**
+
+env:
+# Credentials for deployment to AWS
+AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID}}
+AWS_SECRET_ACCESS_KEY: ${{ secrets. AWS_SECRET_ACCESS_KEY }}
